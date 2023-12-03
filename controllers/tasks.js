@@ -1,9 +1,12 @@
+const taskSchema = require('../models/task')
+
 const getAllTasks = (req,res) => {
     res.send('all items from the file')
 }
 
-const createTask = (req,res) => {
-    res.send('new task')
+const createTask = async (req,res) => {
+    const task = await taskSchema.create(req.body)
+    res.status(201).json({task})
 }
 
 const getTask = (req,res) => {
