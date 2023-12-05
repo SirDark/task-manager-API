@@ -10,7 +10,7 @@ const TaskSchema = new mongoose.Schema({
     },
     completed: {
         type: Boolean,
-        required:[true, 'must provide if completed or not']
+        default: false
     }
 })
 
